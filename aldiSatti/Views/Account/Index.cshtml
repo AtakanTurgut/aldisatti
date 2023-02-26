@@ -1,0 +1,41 @@
+﻿@using aldiSatti.Models
+@model IEnumerable<UserOrder>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="span12">
+
+        <div class="well well-small">
+
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th>Sipariş Numarası</th>
+                        <th>Sipariş Tarihi</th>
+                        <th>Toplam Tutar (₺)</th>
+                        <th>Sipariş Durumu</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.orderNumber</td>
+                            <td>@item.orderDate</td>
+                            <td>@item.total</td>
+                            <td>@item.orderState</td>
+                            <td>@Html.ActionLink("Sipariş Detay", "Details", new { id = @item.id }, new { @class = "btn btn-primary" })</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <br>
+
+        </div>
+    </div>
+</div>

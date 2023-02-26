@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div id="sidebar" class="span3">
+        <div class="well well-small">
+            <ul class="nav nav-list">
+                @Html.Action("_CategoryList", "Category")
+                <li style="border:0"> &nbsp;</li>
+                @Html.Action("Summary", "Cart")
+            </ul>
+        </div>
+
+
+        @Html.Action("_FeaturedProductList", "Home")
+
+    </div>
+    <div class="span9">
+        <ul class="breadcrumb">
+            <li><a href="/Home/Index">Anasayfa</a> <span class="divider">/</span></li>
+            <li class="active">İletişim</li>
+        </ul>
+        <div class="well">
+                <h3>İletişim</h3>
+
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="col-md-10">
+                            <br />
+                            <p> Atakan Turgut </p>
+                            <p><a href="mailto: atakan.trgt@hotmail.com">atakan.trgt@hotmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,11 @@
+﻿@using aldiSatti.Models
+@model IEnumerable<CategoryModel>
+
+<li><a href="/Home/Product"><span class="icon-chevron-right"></span>Tüm Ürünler</a></li>
+
+@foreach (var item in Model)
+{
+    <li><a href="/Home/ProductList/@item.id"><span class="icon-chevron-right"></span>@item.name [@item.count]</a></li>
+}
+
+

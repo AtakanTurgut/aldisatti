@@ -1,0 +1,27 @@
+﻿@using aldiSatti.Entity
+@model IEnumerable<Product>
+
+<div id="myCarousel" class="carousel slide homCar">
+    <div class="carousel-inner">
+        <div class="item active">
+            <img style="width: 100%; max-width: 700px; max-height: 330px; min-width: 700px; min-height: 330px" src="~/Content/Images/in.jpg" alt="bootstrap ecommerce templates">
+            <div class="carousel-caption">
+                <h4>    Sayılı Ürünlerde Dev İndirim    </h4>
+                <p><span>7-17 MART</span></p>
+            </div>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div class="item">
+                <a href="/Home/ProductDetails/@item.id"><img style="width:100%; max-width:700px; max-height:330px; min-width:700px; min-height:330px" src="~/Content/Images/@item.image" alt="bootstrap templates"></a>
+                <div class="carousel-caption">
+                    <h4>@item.name</h4>
+                    <p><span>@item.price ₺</span></p>
+                </div>
+            </div>
+        }
+
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+</div>

@@ -1,0 +1,89 @@
+﻿@model aldiSatti.Models.OrderDetails
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="span12">
+
+        <div class="well well-small">
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th>Sipariş Id</th>
+                        <th>Sipariş Numarası</th>
+                        <th>Sipariş Tarihi</th>
+                        <th>Toplam Tutar (₺)</th>
+                        <th>Sipariş Durumu</th>
+                        <th>Adres</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>@Model.orderId</td>
+                        <td>@Model.orderNumber</td>
+                        <td>@Model.orderDate</td>
+                        <td>@Model.total</td>
+                        <td>
+                            @if (Model.orderState == aldiSatti.Entity.OrderState.Bekleniyor)
+                            {
+                                <a class="btn btn-danger">Sipariş Bekleniyor</a>
+                            }
+                            else if (Model.orderState == aldiSatti.Entity.OrderState.Paketlendi)
+                            {
+                                <a class="btn btn-warning">Sipariş Paketlendi</a>
+                            }
+                            else if (Model.orderState == aldiSatti.Entity.OrderState.Kargolandi)
+                            {
+                                <a class="btn btn-info">Sipariş Kargolandı</a>
+                            }
+                            else if (Model.orderState == aldiSatti.Entity.OrderState.Tamamlandi)
+                            {
+                                <a class="btn btn-success">Sipariş Tamamlandı</a>
+                            }
+                        </td>
+                        <td>
+                            @Model.address <br />
+                            @Model.city <br />
+                            @Model.district <br />
+                            @Model.quarter <br />
+                            @Model.postCode <br />
+                        </td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th>Resim</th>
+                        <th>Ürün Adı</th>
+                        <th>Toplam Tutar (₺)</th>
+                        <th>Adet</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.OrderLines)
+                    {
+                        <tr>
+                            <td><img src="~/Content/Images/@item.image" height="75" width="50" /></td>
+                            <td>@item.productName</td>
+                            <td>@item.price</td>
+                            <td>@item.quantity</td>
+                            <td><a href="/Home/ProductDetails/@item.productId" class="btn btn-success" target="_blank"> Ürün Detay</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <br>
+
+        </div>
+    </div>
+</div>
+
