@@ -4,7 +4,7 @@
 
 If we want to start the project with [Microsoft Visual Studio](https://visualstudio.microsoft.com/), we start the project by right-clicking on the "[\Views\Home\Index.cshtml](https://github.com/AtakanTurgut/aldisatti/blob/main/aldiSatti/Views/Home/Index.cshtml)" file while the project is open and selecting "View in Browser ([Selected Browser](https://www.google.com.tr/))".
 
-If we want, we can also use `\Index.cshtml` of other "[\Views](https://github.com/AtakanTurgut/aldisatti/blob/main/aldiSatti/Views/Home/Index.cshtml)" files to see how other pages look.
+If we want, we can also use `\Index.cshtml` of other "[\Views](hhttps://github.com/AtakanTurgut/aldisatti/tree/main/aldiSatti/Views)" files to see how other pages look.
 
 However, it's best to start the project with "[\Views\Home\Index.cshtml](https://github.com/AtakanTurgut/aldisatti/blob/main/aldiSatti/Views/Home/Index.cshtml)" to run it properly.
 
